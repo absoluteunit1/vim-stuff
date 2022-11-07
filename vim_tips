@@ -1,0 +1,39 @@
+EX COMMANDS
+
+Getting Around
+:2 -> Go to line 2 in current file
+:-17 -> Go up 18 lines from current position
+:+17 -> Go down 18 lines from current position
+:5p -> print line 5 in current file
+:1,6 -> print lines 1-6
+:$ -> go to end of file
+
+Replacing
+:s/foo/bar -> replace foo with bar in current line
+:%s/foo/bar -> replace foo with bar in current file
+
+Deleting
+:1,5d -> delete line 1-5
+:.,+3d -> delete from current line to 3 lines down
+:.,-3d -> delete from current line to 3 lines up
+:.,$d -> delete from current line to end of file
+:%d -> delete all lines in a file
+
+Copying
+:%t$ -> copy all lines and place at the end of file (creating a duplicate)
+:-2,-1t-22 -> copy from 2 lines above, to 1 line above (inclusive) and move to 22 lines above
+
+Moving
+:-2,.m-25 -> move 2 lines above to current line up 25 lines
+:.m25 -> move current line to line 25
+:226,$m-2 -> move lines 226 to end of file to two lines above current line
+:20,25m. -> move lines 20-25 to current line
+
+Searching
+:/moving/d -> delete the next line containing the word 'moving'
+:/moving/+d -> delete the line below the next line containing the pattern 'moving'
+:/moving/+3d -> delete the third line below the next line containing the pattern 'moving'
+:/moving/,/deleting/d -> delete from the line matching 'moving' to a line containing /deleting/
+:.m/Replacing/+1 -> take text from current line and move it to 1 line below the next line matching pattern 'Replacing'
+:-6,.m/Copying/ -> take text from 6 lines up to current line and move to next line the matches 'Copying'
+:/Copying/,/Moving/t+1 -> copy text from next line matching 'Copying' to next line matching 'Moving' to one line below current one

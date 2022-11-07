@@ -1,0 +1,60 @@
+" Leader Key
+let mapleader = " "
+
+" Settings
+set nu rnu
+set surround
+set visualbell
+set noerrorbells
+set incsearch
+set ignorecase
+
+" Normal Mode Mappings
+nmap <C-l> :tabnext<CR>
+nmap <C-h> :tabprev<CR>
+nmap <leader>l <C-w>l
+nmap <leader>h <C-w>h
+nmap <leader>j <C-w>j
+nmap <leader>k <C-w>k
+
+" Plugins
+Plug 'tpope/vim-surround'
+
+" ACTION IDs MAPPINGS
+
+"Basic actions
+map <leader>r <Action>(RenameElement)
+map <leader>gd <Action>(FindUsages)
+map <leader>m <Action>(ToggleBookmark)
+
+"Tabs
+map <leader>] <Action>(MoveTabRight)
+map <leader>[ <Action>(MoveTabDown)
+map <leader>\ <Action>(MoveEditorToOppositeTabGroup)
+
+"Viewing Modes
+map <leader>p <Action>(TogglePresentationMode)
+map <leader>d <Action>(ToggleDistractionFreeMode)
+
+"Activating Tool Windows
+map <leader>1 <Action>(ActivateProjectToolWindow)
+map <leader>2 <Action>(ActivateDatabaseToolWindow)
+map <leader>3 <Action>(ActivateTerminalToolWindow)
+map <leader>4 <Action>(ActivateBookmarksToolWindow)
+map <leader>5 <Action>(ActivateTODOToolWindow)
+map <leader>6 <Action>(ActivateProblemsViewToolWindow)
+map <leader>7 <Action>(ActivateCommitToolWindow)
+map <leader>8 <Action>(ActivateDebugToolWindow)
+map <leader>9 <Action>(ActivateJSONFormatterToolWindow)
+
+
+
+
+
+
+
+
+
+
+
+
