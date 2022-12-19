@@ -1,7 +1,10 @@
-" Leader Key
+" LEADER KEY(s)
+nnoremap <SPACE> <Nop>
+nnoremap <BS> <Nop>
 let mapleader = " "
+nmap <BS> <leader>
 
-" Settings
+" SETTINGS
 set nu rnu
 set surround
 set visualbell
@@ -9,52 +12,75 @@ set noerrorbells
 set incsearch
 set ignorecase
 
-" Normal Mode Mappings
-nmap <C-l> :tabnext<CR>
-nmap <C-h> :tabprev<CR>
+set clipboard=unnamed
+set ideamarks
+set ideajoin
+set showcmd
+
+" CUSTOM COMMANDS
+
+command! Reformat action ToggleBookmark
+
+" NORMAL MODE MAPPINGS
+
+" Navigating multiple windows
 nmap <leader>l <C-w>l
 nmap <leader>h <C-w>h
 nmap <leader>j <C-w>j
 nmap <leader>k <C-w>k
 
-" Plugins
+nnoremap ; :
+nnoremap : ;
+
+nmap n nzz
+nmap N Nzz
+
+" INSERT MODE MAPPINGS
+inoremap <C-;> <C-[> 
+
+" PLUGINS
 Plug 'tpope/vim-surround'
 
-" ACTION IDs MAPPINGS
+" IDE ACTIONS
 
-"Basic actions
-map <leader>r <Action>(RenameElement)
-map <leader>gd <Action>(FindUsages)
+" Bookmarks
 map <leader>m <Action>(ToggleBookmark)
+map <leader>n <Action>(ToggleBookmarkWithMnemonic)
+map <leader>sm <Action>(ShowBookmarks)
+map <leader>sn <Action>(ShowTypeBookmarks)
+map <leader>em <Action>(EditBookmark)
 
-"Tabs
-map <leader>] <Action>(MoveTabRight)
-map <leader>[ <Action>(MoveTabDown)
-map <leader>\ <Action>(MoveEditorToOppositeTabGroup)
+map <leader>p <Action>(PasteMultiple)
+map <leader>re <Action>(RenameElement)
 
-"Viewing Modes
-map <leader>p <Action>(TogglePresentationMode)
-map <leader>d <Action>(ToggleDistractionFreeMode)
+map <leader>gd <Action>(FindUsages)
 
-"Activating Tool Windows
-map <leader>1 <Action>(ActivateProjectToolWindow)
-map <leader>2 <Action>(ActivateDatabaseToolWindow)
-map <leader>3 <Action>(ActivateTerminalToolWindow)
-map <leader>4 <Action>(ActivateBookmarksToolWindow)
-map <leader>5 <Action>(ActivateTODOToolWindow)
-map <leader>6 <Action>(ActivateProblemsViewToolWindow)
-map <leader>7 <Action>(ActivateCommitToolWindow)
-map <leader>8 <Action>(ActivateDebugToolWindow)
-map <leader>9 <Action>(ActivateJSONFormatterToolWindow)
+" Searching
+map <leader>se <Action>(SearchEverywhere)
+map <leader>sf <Action>(GotoFile)
+map <leader>ss <Action>(GotoSymbol)
 
+" Macros
+map <leader>@ <Action>(PlaySavedMacrosAction)
+map <leader>! <Action>(PlaybackLastMacro)
+map <leader>q <Action>(StartStopMacroRecording)
+map <leader>z <Action>(StartStopMacroRecording)
 
+" Navigation
+map <leader>; <Action>(ShowNavBar)
 
+map <leader>do <Action>(QuickJavaDoc)
+map <leader>rc <Action>(RecentChanges)
 
+" Git
+map <leader>blame <Action>(Annotate)
 
+" Tabs
+map tr <Action>(MoveTabRight)
+map td <Action>(MoveTabDown)
+map to <Action>(MoveEditorToOppositeTabGroup)
 
-
-
-
-
-
-
+" Viewing Modes
+"map <leader>p <Action>(TogglePresentationMode)
+map <leader>df <Action>(ToggleDistractionFreeMode)
+map <leader>rv <Action>(IdeaVim.ReloadVimRc.reload)
